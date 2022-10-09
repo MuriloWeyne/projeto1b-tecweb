@@ -31,6 +31,11 @@
     Nosso aplicativo também permite que você edite as anotações já feitas em algum post it
 </details>
 
+<details>
+    <summary>📌 Tags</summary>
+    Você pode atribuir uma tag a qualquer anotação sua, facilitando a organização de suas anotações.
+</details>
+
 
 ## `⚠️` Licença:
 - [MIT License](https://choosealicense.com/licenses/mit/)
