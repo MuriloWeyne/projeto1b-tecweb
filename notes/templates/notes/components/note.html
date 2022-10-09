@@ -1,0 +1,24 @@
+{% load static %}
+<div class="card {id}">
+    <div class="title-container">
+        <h3 class="card-title">{{ note.title }}</h3>
+        <div class="buttons-container">
+            <form class="delete-card" action="/delete" method="post">
+                {% csrf_token %}
+                <button class="delete-btn" type="submit" value={{note.id}} name="id">
+                    <img class="delete-icon" src="{% static 'notes/img/delete24.png' %}" />
+                </button>
+            </form>
+            <a href="/edit?id={{note.id}}">
+                <img class="edit-icon" src="{% static 'notes/img/edit24.png' %}" />
+            </a>    
+        </div>
+    </div>
+    <div class="card-content">
+        <p>{{ note.content }}</p>
+    </div>
+    <div class="card-footer">
+        <p class="card-id">{{ note.id }}</p>
+        <p class="note-tag">{{ note.tag }}</p>
+    </div>
+</div>

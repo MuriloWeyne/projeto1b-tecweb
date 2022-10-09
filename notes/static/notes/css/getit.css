@@ -1,0 +1,505 @@
+/*
+Algumas informações úteis e dicas:
+  - Fontes disponíveis:
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+  - Cores:
+    Tons de amarelo:
+      #e4fc2b
+      #e0d426
+      #f7d736
+      #e0af26
+      #fcb02b
+    Tons de cinza:
+      #2c2c2c
+      #4c4c4c
+    Cores dos cards:
+      #ead3a7
+      #9de0f5
+      #ef89ba
+      #fae890
+      #abe9c1
+  - Sombra: https://codepen.io/sdthornton/pen/wBZdXq
+ */
+
+
+ body {
+  font-family: "Roboto", sans-serif;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: #2c2c2c;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15rem;
+}
+
+.appbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  max-height: 4rem;
+  aspect-ratio: 1;
+  background-color: #f8d434;
+  box-shadow: 0px 0.2rem 1rem #4C4C4C;
+}
+
+.tag-list-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.5rem;
+  width: 7rem;
+  height: 4rem;
+  background-color: #f8d434;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dark-btn {
+  display: flex;
+  border: none;
+  align-self: center;
+  background: none;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 30rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border: none;
+  box-shadow: 0.1rem 0.1rem 0.5rem #4C4C4C;
+  border-radius: 0.4rem;
+}
+
+.form-title {
+  font-family: monospace;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #545454;
+}
+
+.form-card-title {
+  border: none;
+  font-family: monospace;
+  font-size: larger;
+  padding-bottom: 0.5rem;
+}
+
+.form-card-tag {
+  border: none;
+  font-family: monospace;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-family: monospace;
+}
+
+.note-tag {
+  border: 1px solid #545454;
+  padding: 0.2rem;
+  border-radius: 0.2rem;  
+}
+
+input, textarea {
+  margin-bottom: 0.75rem;
+}
+
+.autoresize {
+  border: none;
+  padding-bottom: 0.5rem;
+}
+
+.forms-container {
+  display: flex;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;  
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+
+.tag-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;  
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  margin-top: 15rem;
+  font-size: 1.5rem;
+}
+
+.unique-tag {
+  text-decoration: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+  height: 7rem;
+  border: hidden;
+  margin: 1%;
+  border-radius: 0.4rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem #4C4C4C;
+  padding: 0.5rem;
+}
+
+.tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 13rem;
+  height: 7rem;
+  border: hidden;
+  margin: 1%;
+  border-radius: 0.4rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem #4C4C4C;
+  padding: 0.5rem;
+}
+
+h3 {
+  font-weight: bold;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.card-content {
+  display: flex;
+  justify-content: center;
+  color: #4C4C4C;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.tag-content {
+  display: flex;
+  justify-content: center;
+  color: #4C4C4C;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.delete-card {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.subtitle{
+  display: flex;
+  align-items: center;
+  margin:1%;
+}
+
+.tag-title {
+  align-self: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5rem;
+}
+
+.logo {
+  max-width: 90.53px;
+  margin: 0.4%;
+}
+
+.title-container {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.btn {
+  font-family: monospace;
+  border: none;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  background-color: #f7d736;
+}
+
+.delete-btn {
+  border: none;
+  align-self: center;
+  background: none;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+}
+
+.delete-icon {
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.edit-btn {
+  border: none;
+  align-self: center;
+  background: none;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+}
+
+.save-btn {
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #555dd1;
+  align-self: center;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 5px;
+}
+
+
+.edit-icon {
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, 0.3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+} 
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 15%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.close-icon {
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card-color-1, .tag-color-1 {
+  background-color: #ead3a7;
+}
+.card-color-2, .tag-color-2 {
+  background-color: #9de0f5;
+}
+.card-color-3, .tag-color-3 {
+  background-color: #ef89ba;
+}
+.card-color-4, .tag-color-4 {
+  background-color: #fae890;
+}
+.card-color-5, .tag-color-5 {
+  background-color: #abe9c1;
+}
+
+.card-rotation-1, .tag-rotation-1 {
+  -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+.card-rotation-2, .tag-rotation-2 {
+  -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+.card-rotation-3, .tag-rotation-3 {
+  -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    -o-transform: rotate(4deg);
+    -ms-transform: rotate(4deg);
+    transform: rotate(4deg);
+}
+.card-rotation-4, .tag-rotation-4 {
+  -webkit-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    -o-transform: rotate(-4deg);
+    -ms-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+}
+.card-rotation-5, .tag-rotation-5 {
+  -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+.card-rotation-6, .tag-rotation-6 {
+  -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+.card-rotation-7, .tag-rotation-7 {
+  -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
+}
+.card-rotation-8, .tag-rotation-8 {
+  -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+}
+.card-rotation-9, .tag-rotation-9 {
+  -webkit-transform: rotate(1deg);
+  -moz-transform: rotate(1deg);
+  -o-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  transform: rotate(1deg);
+}
+.card-rotation-10, .tag-rotation-10 {
+  -webkit-transform: rotate(-1deg);
+  -moz-transform: rotate(-1deg);
+  -o-transform: rotate(-1deg);
+  -ms-transform: rotate(-1deg);
+  transform: rotate(-1deg);
+}
+.card-rotation-11, .tag-rotation-11 {
+  -webkit-transform: rotate(0.5deg);
+    -moz-transform: rotate(0.5deg);
+    -o-transform: rotate(0.5deg);
+    -ms-transform: rotate(0.5deg);
+    transform: rotate(0.5deg);
+}
+
+.dark {
+  background-color: #222;
+  color: #000000;
+}
+

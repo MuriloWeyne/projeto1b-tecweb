@@ -1,0 +1,23 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="appbar">
+  <a class="logo" href="/"><img src="{% static 'notes/img/logo-getit.png' %}" class="logo"/></a>
+  <h1 class="tag-title">Tags</h1>
+  <button class="dark-btn" onclick="darkMode()">
+    <img src="{% static 'notes/img/dark16.png' %}" class="moon"/>
+  </button>
+</div>
+
+<main class="container">
+  <div class="tag-container">
+      {% for tag in tags %}
+      {% include "notes/components/tag.html" %} 
+      {% endfor %}
+  </div>
+</main>
+<script type="text/javascript" src="{% static 'notes/scripts/darkmode.js' %}"></script>
+<script type="text/javascript" src="{% static 'notes/scripts/tags.js' %}"></script>
+
+{% endblock %}

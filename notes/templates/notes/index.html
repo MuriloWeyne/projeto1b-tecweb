@@ -1,0 +1,49 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="appbar">
+  <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
+  <a class="tag-list-btn" href="/tag_list">Tag List</a>
+  <button class="dark-btn" onclick="darkMode()">
+    <img src="{% static 'notes/img/dark16.png' %}" class="moon"/>
+  </button>
+</div>
+
+<main class="container">
+  <div class="forms-container">
+    <form id="form-card-id" class="form-card" method="post" onsubmit="return validateCreateForm()" required>
+      {% csrf_token %}
+      <div class="form-title">
+        <h2 class="form-title-text">Criar nota</h2>
+      </div>
+      <input
+        class="form-card-title"
+        type="text"
+        name="titulo"
+        placeholder="Titulo"
+      />
+      <input
+      class="form-card-tag"
+      type="text"
+      name="tag"
+      placeholder="Tag" />
+      <textarea
+        class="autoresize"
+        name="detalhes"
+        placeholder="Conteudo"
+      ></textarea>
+      
+      <button class="btn" type="submit">Criar</button>
+    </form>
+  </div>
+  <div class="card-container">
+    {% for note in notes %}
+    {% include "notes/components/note.html" %} 
+    {% endfor %}
+  </div>
+</main>
+<script type="text/javascript" src="{% static 'notes/scripts/getit.js' %}"></script> 
+<script type="text/javascript" src="{% static 'notes/scripts/script.js' %}"></script>
+<script type="text/javascript" src="{% static 'notes/scripts/darkmode.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="appbar">
+  <img src="{% static '/notes/img/logo-getit.png' %}" class="logo" />
+  <button class="dark-btn" onclick="darkMode()">
+    <img src="{% static '/notes/img/dark16.png' %}" class="moon"/>
+  </button>
+</div>
+
+<main class="container">
+  <div class="forms-container">
+    <form id="form-card-id" class="form-card" method="post" onsubmit="return validateCreateForm()" required>
+      {% csrf_token %}
+      <div class="form-title">
+        <h2 class="form-title-text">Editar nota</h2>
+      </div>
+      <input type="hidden" name="id" value={{note.id}}/>
+      <input
+        class="form-card-title"
+        type="text"
+        name="titulo"
+        placeholder="Titulo"
+        value="{{note.title}}"
+      />
+      <textarea
+        class="autoresize"
+        name="detalhes"
+        placeholder="Digite o conteudo..."
+      >{{ note.content }}</textarea>
+      <button class="btn" type="submit">Confirmar</button>
+    </form>
+  </div>
+  <div class="card-container">
+    {% for note in notes %}
+    {% include "notes/components/note.html" %} 
+    {% endfor %}
+  </div>
+</main>
+<script type="text/javascript" src="{% static 'notes/scripts/getit.js' %}"></script> 
+<script type="text/javascript" src="{% static 'notes/scripts/script.js' %}"></script>
+<script type="text/javascript" src="{% static 'notes/scripts/darkmode.js' %}"></script>
+{% endblock %}
