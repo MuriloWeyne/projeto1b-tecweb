@@ -3,8 +3,8 @@
 ### 📌 Sobre o aplicativo
 >Anote seus compromissos, tarefas, lista de compras e tudo que julgar necessário de forma rápida e prática.
 
-### ▶️ Execução
->Basta executar o arquivo main.py e acessar a URL: http://localhost:8080/ após a execução.
+### ▶️ Heroku Deploy
+> https://arcane-inlet-06382.herokuapp.com
 
 
 ## 🛠️ Funcionalidades:
