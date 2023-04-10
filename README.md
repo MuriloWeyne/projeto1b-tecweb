@@ -36,6 +36,10 @@
     Você pode atribuir uma tag a qualquer anotação sua, facilitando a organização de suas anotações.
 </details>
 
+<details>
+    <summary>🔧 Instalação</summary>
+    Clone este repositório em seu computador e instale as bibliotecas necessárias utilizando o comando <code>pip install requirements.txt</code> em seu terminal.
+
 
 ## `⚠️` Licença:
 - [MIT License](https://choosealicense.com/licenses/mit/)
